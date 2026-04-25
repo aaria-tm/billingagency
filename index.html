@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gaarvi Agency Invoice</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+<div class="invoice" id="invoice">
+
+  <h2 class="center">TAX INVOICE</h2>
+
+  <div class="header center">
+    <h1>Gaarvi Agency</h1>
+    <p>FMCG Distributor</p>
+    <p>Phone: 9876543210 | Email: gaarvi@gmail.com</p>
+    <p>GSTIN: 27ABCDE1234F1Z5 | State: Maharashtra</p>
+  </div>
+
+  <div class="row">
+    <div class="box">
+      <b>Bill To</b><br>
+      <input id="customer" placeholder="Customer Name"><br>
+      <input id="address" placeholder="Address"><br>
+      <input id="contact" placeholder="Contact"><br>
+      <input id="gst" placeholder="GSTIN">
+    </div>
+
+    <div class="box">
+      <b>Invoice Details</b><br>
+      Invoice No: <span id="invoiceNo"></span><br>
+      Date: <input type="date" id="date"><br>
+      Place: Maharashtra
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Taxable</th>
+        <th>CGST</th>
+        <th>SGST</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="items"></tbody>
+  </table>
+
+  <div class="add">
+    <input id="item" placeholder="Item">
+    <input id="qty" type="number" placeholder="Qty">
+    <input id="price" type="number" placeholder="Price">
+    <button onclick="addItem()">Add</button>
+  </div>
+
+  <div class="totals">
+    <p>Subtotal: ₹ <span id="subtotal">0</span></p>
+    <p>CGST (9%): ₹ <span id="cgst">0</span></p>
+    <p>SGST (9%): ₹ <span id="sgst">0</span></p>
+    <h3>Total: ₹ <span id="total">0</span></h3>
+  </div>
+
+  <div class="words">
+    <b>Invoice Amount in Words:</b>
+    <p id="words"></p>
+  </div>
+
+  <div class="row">
+    <div class="box">
+      <b>Bank Details</b><br>
+      Bank: Your Bank<br>
+      A/C: 123456789<br>
+      IFSC: ABCD0001234
+    </div>
+
+    <div class="box">
+      <b>Terms</b><br>
+      Goods once sold will not be taken back.<br>
+      Thank you for your business.
+    </div>
+  </div>
+
+</div>
+
+<div class="actions">
+  <button onclick="downloadPDF()">Download Bill</button>
+  <button onclick="newBill()">New Bill</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

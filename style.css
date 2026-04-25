@@ -1,0 +1,71 @@
+body {
+  font-family: Arial;
+  background: #eaeaea;
+}
+
+.invoice {
+  width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border: 2px solid #000;
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  border-bottom: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.box {
+  width: 50%;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background: #6c63ff;
+  color: white;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.add input {
+  margin: 5px;
+  padding: 6px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.totals {
+  text-align: right;
+  margin-top: 10px;
+}
